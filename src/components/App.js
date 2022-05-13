@@ -17,11 +17,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Header/>} />
       </Routes>
-      <RockPaperScissors />
     </Router>
     )
   }
-  renderMobileOrDesktop()
   return (
     renderMobileOrDesktop()
   );
