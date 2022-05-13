@@ -1,27 +1,28 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MobileDetect from "mobile-detect";
 
-import MobileBox from "./MobileBox";
 import Header from "./Header";
+import GamesList from "./GamesList";
 import RockPaperScissors from "./RockPaperScissors/RockPaperScissors";
-
 function App() {
-  const renderMobileOrDesktop = () => {
-    let type = new MobileDetect(window.navigator.userAgent);
-    if (type.os === "iOS" || type.os === "AndroidOS") {
-      return <MobileBox/>
-    }
-    return (
-      <Router>
+  const gamesList = ["Rock paper scissors"];
+
+  return (
+    <Router>
       <Routes>
-        <Route exact path="/" element={<Header/>} />
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <Header />
+              <GamesList list={gamesList} />
+            </>
+          }
+        />
+        <Route exact path="/RockPaperScissors" element={<RockPaperScissors/>} />
       </Routes>
     </Router>
-    )
-  }
-  return (
-    renderMobileOrDesktop()
   );
 }
 
