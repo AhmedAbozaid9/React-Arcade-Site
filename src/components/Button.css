@@ -1,0 +1,21 @@
+button:active{
+  outline: none;
+}
+button {
+  width: auto;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background-color: #F05454;
+  color: inherit;
+}
+button.secondary {
+  background-color: transparent;
+  color: #F05454;
+  border: 2px solid #F05454;
+}
+button:active{
+  transform: scale(.98);
+}
