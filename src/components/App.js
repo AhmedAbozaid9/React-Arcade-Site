@@ -10,17 +10,20 @@ function App() {
   const renderMobileOrDesktop = () => {
     let type = new MobileDetect(window.navigator.userAgent);
     if (type.os === "iOS" || type.os === "AndroidOS") {
-      <MobileBox/>
+      return <MobileBox/>
     }
-  }
-  renderMobileOrDesktop()
-  return (
-    <Router>
+    return (
+      <Router>
       <Routes>
         <Route exact path="/" element={<Header/>} />
       </Routes>
       <RockPaperScissors />
     </Router>
+    )
+  }
+  renderMobileOrDesktop()
+  return (
+    renderMobileOrDesktop()
   );
 }
 
